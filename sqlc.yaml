@@ -1,0 +1,28 @@
+version: "2"
+cloud:
+    project: "example_project"
+sql:
+    - engine: "sqlite"
+      schema: "schema"
+      queries: "queries"
+      database:
+          uri: file:authors?mode=memory&cache=shared
+      rules:
+          - sqlc/db-prepare
+      gen:
+          go:
+              package: "sqlc"
+              out: "sqlc"
+              emit_interface: true
+              emit_json_tags: true
+              emit_prepared_queries: true         # <- vary nice 
+              emit_exported_queries: false         # <- vary nice 
+              emit_params_struct_pointers: true   # change params to pointers 
+              emit_pointers_for_null_types: true  #   upported for PostgreSQL( pgx/v4 or pgx/v5) and SQLite
+              emit_sql_as_comment: true           # <- must 
+              emit_enum_valid_method: false
+              emit_all_enum_values: false
+# overrides:
+#     go: null
+# plugins: []
+# options: {}
