@@ -28,7 +28,7 @@ sqlc-template
 ```
 
 
-![sqlc in action](<./assets/Screenshot 2025-04-27 at 8.36.42 PM.jpg>)
+![sqlc in action](<assets/image-1-vscode.jpg>)
 
 ## Setup and Installation
 
